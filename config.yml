@@ -1,9 +1,9 @@
-token: "xxxxxxxxxxxxxxxx"    # lichess OAuth2 Token
+token: "yrWXkRZHEtHOUml7"    # lichess OAuth2 Token
 url: "https://lichess.org/"  # lichess base URL
 
 engine:                      # engine settings
   dir: "./engines/"          # dir containing engines, relative to this project
-  name: "engine_name"        # binary name of the engine to use
+  name: "stockfish_20090216_x64_bmi2.exe"        # binary name of the engine to use
   protocol: "uci"            # "uci" or "xboard"
   polyglot:
     enabled: false           # activate polyglot book
@@ -48,15 +48,15 @@ abort_time: 20               # time to abort a game in seconds when there is no 
 fake_think_time: false       # artificially slow down the bot to pretend like it's thinking
 
 challenge:                   # incoming challenges
-  concurrency: 1             # number of games to play simultaneously
+  concurrency: 100             # number of games to play simultaneously
   sort_by: "best"            # possible values: "best", "first"
-  accept_bot: false          # accepts challenges coming from other bots
-  max_increment: 180         # maximum amount of increment to accaept a challenge. the max is 180. set to 0 for no increment
+  accept_bot: true           # accepts challenges coming from other bots
+  max_increment: 0           # maximum amount of increment to accaept a challenge. the max is 180. set to 0 for no increment
   min_increment: 0           # minimum amount of increment to accept a challenge
   variants:                  # chess variants to accept (http://lichess.org/variant)
     - standard
 #   - fromPosition
-#   - antichess
+#    - antichess
 #   - atomic
 #   - chess960
 #   - crazyhouse
@@ -66,11 +66,11 @@ challenge:                   # incoming challenges
 #   - threeCheck
   time_controls:             # time controls to accept
 #   - ultraBullet
-    - bullet
+#   - bullet
     - blitz
     - rapid
-#   - classical
-#   - correspondence
+    - classical
+    - correspondence
   modes:                     # game modes to accept
-    - casual                 # unrated games
+#   - casual                 # unrated games
     - rated                  # rated games - must comment if the engine doesn't try to win
